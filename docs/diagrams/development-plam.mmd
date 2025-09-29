@@ -1,0 +1,33 @@
+---
+config:
+  layout: elk
+  theme: forest
+  elk:
+    mergeEdges: true
+    nodePlacementStrategy: BRANDES_KOEPF
+    nodeSpacing: 50
+  themeVariables:
+    primaryColor: '#e8f5e8'
+    primaryTextColor: '#1b5e20'
+    primaryBorderColor: '#2e7d32'
+    lineColor: '#4caf50'
+    fontFamily: arial
+    fontSize: 12px
+    background: '#f9fff9'
+  flowchart:
+    defaultRenderer: elk
+    htmlLabels: true
+    curve: basis
+    useMaxWidth: true
+    diagramPadding: 20
+title: VRP Database Development Plan
+---
+flowchart TB
+  subgraph s1["VRP Database Development Plan"]
+        n1@{ label: "git clone <code><a href=\"https://github.com/rhgrant10/tsplib95\">tsplib95 repo</a></code>" }
+        n2["Classify and parse the problems from the files."]
+        n3["Generate database properly using duckdb"]
+  end
+    n1 --> n2
+    n2 --> n3
+    n1@{ shape: rounded}
